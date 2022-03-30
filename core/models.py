@@ -22,8 +22,8 @@ class CustomUserManager(BaseUserManager):
         
                 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    last_name = models.CharField(max_length=30)
-    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30, default='')
+    first_name = models.CharField(max_length=30, default='')
     email = models.EmailField(max_length=128, unique=True)
     username = models.CharField(max_length=128, unique=True)
     date_joined = models.DateTimeField(auto_now=True)
