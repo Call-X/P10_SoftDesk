@@ -25,7 +25,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=128, unique=True)
     username = models.CharField(max_length=128, unique=True)
     date_joined = models.DateTimeField(auto_now=True)
-    is_active = models.BooleanField(default=True)
+    type = models
     
     objects = CustomUserManager()
     
