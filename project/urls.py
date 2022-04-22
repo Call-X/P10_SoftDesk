@@ -1,13 +1,38 @@
-from django.urls import path, include
-from project.views import ProjectViewset
-from rest_framework_nested import routers
+from django.urls import path
+from project.views import ProjectViewset, ProjectIssuesView, ProjectCommentView, ContributorView, ProjectIssuesDetailView, ContributorDetailView, ProjectCommentDetailView
 
 
-router = routers.SimpleRouter()
-router.register('projects', ProjectViewset, basename='projects')
+create_project = ProjectViewset.as_view({
+     'get': 'list',
+     'post': 'create'
+ })
 
-urlpatterns = [
-    path("", include(router.urls))
-]
+detail_project = ProjectViewset.as_view({
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+ })
 
-# path("create_project/", ProjectViewset.as_view()),
+urlpatterns = ([
+    path('create_project/', create_project, name='project'),
+    path('projects/<int:pk>/', detail_project, name='detail_project'),
+    path('projects/<int:project_id>/issues/', ProjectIssuesView.as_view()),
+    path('projects/<int:project_id>/issues/<int:id>/', ProjectIssuesDetailView.as_view()),
+    path('projects/<int:project_id>/issues/<int:issue_id>/comments/', ProjectCommentView.as_view()),
+    path('projects/<int:project_id>/issues/<int:issue_id>/comments/<int:comment_id>/', ProjectCommentDetailView.as_view()),
+    path('projects/<int:project_id>/contributors/', ContributorView.as_view()),
+    path('projects/<int:project_id>/contributors/<int:id>/', ContributorDetailView.as_view()),
+   
+    
+
+ ])
+
+
+
+
+
+
+
+
+
