@@ -20,7 +20,7 @@ urlpatterns = ([
     path('projects/<int:project_id>/issues/', ProjectIssuesView.as_view()),
     path('projects/<int:project_id>/issues/<int:id>/', ProjectIssuesDetailView.as_view()),
     path('projects/<int:project_id>/issues/<int:issue_id>/comments/', ProjectCommentView.as_view()),
-    path('projects/<int:project_id>/issues/<int:issue_id>/comments/<int:comment_id>/', ProjectCommentDetailView.as_view()),
+    path('projects/<int:project_id>/issues/<int:issue_id>/comments/<int:id>/', ProjectCommentDetailView.as_view()),
     path('projects/<int:project_id>/contributors/', ContributorView.as_view()),
     path('projects/<int:project_id>/contributors/<int:id>/', ContributorDetailView.as_view()),
    
