@@ -1,0 +1,5 @@
+.env
+db.sqlite3
+__pycache__/
+flake8-report
+.mypy_cache/
