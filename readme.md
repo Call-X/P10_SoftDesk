@@ -1,5 +1,5 @@
 
-# OpenclassroomProjets - "LITReview Books Application for Crazy Readers"
+# OpenclassroomProjets - "SoftDesk API"
 
 
 ## Custommer asking:
