@@ -18,7 +18,7 @@ The API is developped in python using Django Rest Framework.
 ## Installation guide :
 1. Clone the repository 
 ```
-$ git clone https://github.com/Call-X/LITReview.git
+$ git clone https://github.com/Call-X/P10_SoftDesk.git
 ```
 2. Navigate to the root folder of the repository
 
